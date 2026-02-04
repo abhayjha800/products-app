@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: products-app
+    env: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NPM_CONFIG_PRODUCTION
+        value: false
+      - key: DATABASE_URL
+        sync: false
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: FRONTEND_URL
+        value: https://products-app-2-ppbr.onrender.com
