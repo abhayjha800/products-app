@@ -23,12 +23,12 @@ export const getUserProducts = async () => {
 }
 
 export const createProduct = async (productData) => {
-    const { data } = await api.post('/products', { productData });
+    const { data } = await api.post('/products', productData);
     return data;
 }
 
 export const updateProduct = async (id, productData) => {
-    const { data } = await api.put(`/products/${id}`, { productData });
+    const { data } = await api.put(`/products/${id}`, productData);
     return data;
 }
 
@@ -39,7 +39,7 @@ export const deleteProduct = async (id) => {
 
 //comments api
 export const createComment = async (productId, content) => {
-    const { data } = await api.post(`/comments/${productId}`, { content });
+    const { data } = await api.post(`/comments/${productId}`, content);
     return data;
 }
 
